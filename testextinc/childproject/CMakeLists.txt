@@ -8,5 +8,5 @@ install( TARGETS childproject EXPORT childproject
     LIBRARY DESTINATION lib )
 install( FILES child.h
     DESTINATION include)
-install(EXPORT childproject DESTINATION lib )
+install(EXPORT childproject DESTINATION shared/import )
 

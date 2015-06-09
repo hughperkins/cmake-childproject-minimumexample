@@ -7,6 +7,13 @@ This is based on the arrayfile cmake files/configuration, which downloads, build
 
 In this implementation in this repository here, it uses an existing source-code directory, but note that 'externalproject' can actually take a git repository url, and do the download automatically, and thus take the place of `git submodule`.
 
+# Variations
+
+There are two variations:
+* testextinc-manual: uses externalproject to build the external project, but sets up include directory paths etc manually in the parent project
+  * eg, if we dont own the child proejct, this could be appropriate?
+* testextinc-findpackage: puts the variables in a xxxConfig.cmake file, that we read using find_package
+
 # To build
 
 *Assumptions*:
@@ -15,7 +22,7 @@ In this implementation in this repository here, it uses an existing source-code 
 * g++ installed
 
 Procedure:
-* cd into testxtinc
+* cd into testextinc-manual or testextinc-findpackage
 * run `./run.sh`
 => hopefully binaries should pop out in `install` subdirectory.  Can run it by doing:
 ```
